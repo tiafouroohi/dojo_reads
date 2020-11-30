@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome, {{user.first_name}}!</h1>
+
+    <h2>Recent Reviews</h2>
+    <table>
+
+        <tbody>
+            <tr>
+                {% for book in all_book %}
+                <td><a href="/individual_book/{{book.id}}">{{book.title}}</a></td>
+                <td>{{book.author.name}}</td>
+                
+            </tr>
+            {% endfor %}
+
+    <h2>Other Books with Reviews</h2>
+
+    <a href="/add_a_book">Add a Book and Review</a>
+    <a href="/books_reviewed">View Books</a>
+</body>
+</html>
